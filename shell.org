@@ -1,0 +1,124 @@
+* install
+
+** zsh
+
+#+BEGIN_SRC bash
+pacman -S tmux
+
+pacman -S fzf
+# ruby
+pacman -S ruby
+
+gem install tmuxinator
+
+git clone https://github.com/gpakosz/.tmux.git
+
+ln -s -f .tmux/.tmux.conf
+
+cp .tmux/.tmux.conf.local .
+
+export EDITOR=vim
+export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH
+#+END_SRC
+
+
+
+
+
+** oh-my-zsh
+
+#+BEGIN_SRC bash
+git clone https://github.com/ohmyzsh/ohmyzsh
+cd ohmyzsh
+./tools/install.sh
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/gradle/gradle-completion.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gradle-completion
+
+git clone https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
+#+END_SRC
+
+~.zshrc~ update plugins
+
+#+BEGIN_SRC bash
+plugins=(git
+         zsh-autosuggestions
+         zsh-syntax-highlighting
+         gradle-completion
+         fzf-zsh-plugin
+         web-search
+        )
+#+END_SRC
+
+** powerline10k
+
+#+BEGIN_SRC bash
+otfinfo --info Cousine\ Bold\ Nerd\ Font\ Complete.ttf
+font-family: Cousine Nerd Font
+#+END_SRC
+
+
+** oh-my-tmux
+
+#+BEGIN_SRC shell
+$ cd
+$ git clone https://github.com/gpakosz/.tmux.git
+$ ln -s -f .tmux/.tmux.conf
+$ cp .tmux/.tmux.conf.local .
+#+END_SRC
+
+#+BEGIN_SRC conf
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix 'C-\'
+bind 'C-\' send-prefix
+#+END_SRC
+
+** fonts
+
+#+BEGIN_SRC bash
+https://github.com/ryanoasis/nerd-fonts
+
+https://github.com/adobe-fonts/source-code-pro
+
+https://github.com/romkatv/powerlevel10k
+#+END_SRC
+
+** linux headers
+
+#+BEGIN_SRC bash
+uname -r
+
+sudo pacman -S linux-headers
+#+END_SRC
+
+** linux-headers上踩过的坑
+
+1. linux-headers 默认没有usb网卡的驱动，导致怎么也安装不了绿联的网卡
+
+* keyboard
+
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
+~/etc/default/keyboard~
+#+BEGIN_SRC
+# KEYBOARD CONFIGURATION FILE
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="pc105"
+XKBLAYOUT="us"
+XKBVARIANT=""
+XKBOPTIONS="ctrl:swapcaps"
+BACKSPACE="guess"
+#+END_SRC
+
+** xmonad
+
+ref: https://eason0210.github.io/post/install-xmonad-on-arch-linux/
+
+
+默认，系统是不进行缩放的，这样在 2K 屏幕下，应用的字体会非常小，完全没法使用。经过一番查询，其实设置很简单，在 Arch Wiki 中就有介绍，只要在 $HOME/.Xresource 中加入以下配置即可：

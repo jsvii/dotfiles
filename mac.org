@@ -1,0 +1,13 @@
+* mac
+
+** Amethyst config
+
+** keyboard
+
+*** swap command and options
+
+System Settings -> Keyboard -> Keyboard Shortcuts... Modifier Keys
+
+1. Options(󰘵) -> 󰘳 Command
+
+1. Command (󰘳) Key -> 󰘵 Options
