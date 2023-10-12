@@ -344,3 +344,6 @@ debug:
 #    - --command=tmux
 
 # vim: nospell
+
+import:
+ - ~/.config/alacritty/themes/themes/zenburm.yaml
