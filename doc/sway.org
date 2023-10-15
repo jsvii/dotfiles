@@ -1,0 +1,22 @@
+* sway
+
+1. sway
+
+1. swaybg
+
+1. waybar
+
+   xorg-xwayland
+
+   xorg-xlsclients
+
+   qt5-wayland
+
+   glfw-wayland
+
+
+** ref
+
+- https://focckers.ca/en/blog/wayland
+
+- https://wiki.archlinux.org/title/sway

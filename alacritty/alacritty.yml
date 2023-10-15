@@ -334,5 +334,5 @@ debug:
 
 # vim: nospell
 
-#import:
-#  - ~/.config/alacritty/themes/themes/zenburm.yaml
+import:
+ - ~/.config/alacritty/alacritty-theme/themes/zenburm.yaml
