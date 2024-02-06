@@ -19,7 +19,7 @@ env:
 window:
   # for mac
 
-  option_as_alt: true
+  # option_as_alt: true
 
   # Window dimensions (changes require restart)
   #
@@ -127,7 +127,7 @@ draw_bold_text_with_bright_colors: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: true
+# custom_cursor_colors: true
 
 bell:
   animation: EaseOutExpo
@@ -234,18 +234,10 @@ bell:
 #   - { key: C,        mods: Command,       action: Copy                         }
 
 
-live_config_reload: true
+# live_config_reload: true
 
 
 mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
 
@@ -331,9 +323,6 @@ debug:
   # Print all received window events.
   print_events: false
 
-  # Record all characters and escape sequences as test data.
-  ref_test: false
-
 # Shell
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
@@ -345,5 +334,5 @@ debug:
 
 # vim: nospell
 
-import:
- - ~/.config/alacritty/themes/themes/zenburm.yaml
+#import:
+#  - ~/.config/alacritty/themes/themes/zenburm.yaml
