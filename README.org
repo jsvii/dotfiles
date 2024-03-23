@@ -1,7 +1,1 @@
 * My Dotfiles
-
-
-** mac
-
-
-** file manager
