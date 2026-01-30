@@ -107,8 +107,17 @@ brew-packages: brew
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
 
+omz:
+	@if [ -d "$HOME/.oh-my-zsh" ]; then \
+		echo "Oh-My-Zsh is already installed"; \
+	else \
+		echo "installing"; \
+		sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended || true; \
+		echo "Oh-My-Zsh installation complete"; \
+	fi
+
 node-packages: mise-packages
-	env PATH=$(PATH):$(HOME)/.local/share/mise/installs/node/$(NODE_DEFAULT_VERSION)/bin npm install --force -g $(shell cat install/npmfile)
+	env PATH=$(PATH):$(HOME)/.local/share/mise/installs/node/$(NODE_DEFAULT_VERSION)/bin npm install --force -g $(shell cat install/npmfile) || true
 
 rust-packages: brew-packages
 	cargo install $(shell cat install/Rustfile)
