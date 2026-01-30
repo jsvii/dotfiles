@@ -107,7 +107,7 @@ brew-packages: brew
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
 
-node-packages:
+node-packages: mise-packages
 	env PATH=$(PATH):$(HOME)/.local/share/mise/installs/node/$(NODE_DEFAULT_VERSION)/bin npm install --force -g $(shell cat install/npmfile)
 
 rust-packages: brew-packages

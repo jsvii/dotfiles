@@ -1,9 +1,6 @@
 [user]
-	name = Leo
+	name = Leo Zhang
 	email = emailtoleo@qq.com
-
-[github]
-	user = webpro
 
 [core]
 	excludesfile = ~/.config/git/ignore
