@@ -31,17 +31,20 @@ brew "gnu-sed"
 brew "grep"
 brew "jq"
 brew "psgrep"
+brew "pstree"
 brew "ripgrep"
 brew "the_silver_searcher"
 
 # languages/tools
 brew "cmake"
 brew "gh"
-brew "n"
-brew "python"
-brew "ruby"
-brew "rust"
 brew "shellcheck"
+# use mise
+#brew "n"
+#brew "python"
+#brew "ruby"
+#brew "rust"
+
 
 # media
 brew "ffmpeg"

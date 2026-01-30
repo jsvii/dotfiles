@@ -84,6 +84,9 @@ git: brew
 npm: brew-packages
 	n install lts
 
+mise:
+	curl https://mise.run | bash
+
 packages-macos: brew-packages cask-apps node-packages rust-packages
 
 packages-arch: pacman-packages
