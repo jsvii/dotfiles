@@ -9,7 +9,7 @@ brew "lotyp/formulae/dockutil"
 brew "nano"
 brew "stow"
 brew "thefuck"
-brew "tmux"
+brew "zellij"
 brew "topgrade"
 
 # fs/network

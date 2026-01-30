@@ -10,6 +10,10 @@ export XDG_CONFIG_HOME = $(HOME)/.config
 export STOW_DIR = $(DOTFILES_DIR)
 export ACCEPT_EULA=Y
 
+
+MISE_EXECUTE = $(HOME)/.local/bin/mise
+NODE_DEFAULT_VERSION := 24
+
 .PHONY: test
 
 all: $(OS)
@@ -81,11 +85,14 @@ endif
 git: brew
 	brew install git git-extras
 
-npm: brew-packages
-	n install lts
-
 mise:
 	curl https://mise.run | bash
+	echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+	echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+
+mise-packages: mise
+	$(MISE_EXECUTE) install $(shell cat install/misefile)
+	$(MISE_EXECUTE) use -g	node@$(NODE_DEFAULT_VERSION)
 
 packages-macos: brew-packages cask-apps node-packages rust-packages
 
@@ -100,11 +107,8 @@ brew-packages: brew
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
 
-vscode-extensions: cask-apps
-	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
-
-node-packages: npm
-	$(N_PREFIX)/bin/npm install --force --location global $(shell cat install/npmfile)
+node-packages:
+	env PATH=$(PATH):$(HOME)/.local/share/mise/installs/node/$(NODE_DEFAULT_VERSION)/bin npm install --force -g $(shell cat install/npmfile)
 
 rust-packages: brew-packages
 	cargo install $(shell cat install/Rustfile)

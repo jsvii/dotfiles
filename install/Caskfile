@@ -1,4 +1,5 @@
 cask "emacs"
+cask "ghostty"
 cask "firefox"
 cask "font-fira-code"
 cask "font-hack"
