@@ -111,3 +111,7 @@
 
 [advice]
 	detachedHead = false
+[http]
+	proxy = sock5://localhost:1080
+[https]
+	proxy = sock5://localhost:1080

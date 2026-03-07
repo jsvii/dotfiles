@@ -1,7 +1,10 @@
 # use option as alt
 macos-option-as-alt = true
+font-size = 18
+copy-on-select = clipboard
 
-# rebind emacs-keys
+
+bell-features = audio
 keybind = cmd+b=text:\x1bb
 keybind = cmd+c=text:\x1bc
 keybind = cmd+d=text:\x1bd
@@ -10,11 +13,9 @@ keybind = cmd+v=text:\x1bv
 keybind = cmd+w=text:\x1bw
 keybind = cmd+q=text:\x1bq
 keybind = cmd+x=text:\x1bx
+keybind = cmd+l=text:\x1bl
+keybind = cmd+u=text:\x1bu
 
 keybind = super+shift+,=text:\x1b\x3c
 keybind = super+shift+.=text:\x1b\x3e
 keybind = insert=paste_from_clipboard
-
-font-size = 18
-
-copy-on-select = clipboard
