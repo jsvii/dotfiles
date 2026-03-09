@@ -12,9 +12,6 @@
 	pager = delta
 	ignorecase = false
 
-[credential]
-	helper = osxkeychain
-
 [pull]
 	rebase = true
 
@@ -112,6 +109,6 @@
 [advice]
 	detachedHead = false
 [http]
-	proxy = sock5://localhost:1080
+	proxy = sock5://localhost:20170
 [https]
-	proxy = sock5://localhost:1080
+	proxy = sock5://localhost:20170
